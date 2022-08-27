@@ -23,6 +23,9 @@
 
 ## Autores :black_nib:
 Ana Sofía Aponte Barriga
+
 José Alejandro Peñaranda Chía
+
 Universidad Nacional de Colombia - Sede Bogotá
+
 Ingeniería Mecatrónica
