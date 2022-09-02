@@ -30,7 +30,7 @@ Acatando las recomendacioens del profesor debido al desconocimiento de las dimen
 
 En conjunto con la calibracion y el montaje final de la herramienta se realizo el diseño de está en Robotstudio, para asi tener el modelo mas aproximado a la realidad y poder realizar la programacion de la rutina a desarrollar.
 
-
+![marcador](/mediaLab1/herramienta.jfif)
 
 ## Código en RAPID del módulo utilizado para el desarrollo de la práctica :computer:
 
