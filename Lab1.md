@@ -12,6 +12,7 @@
 
 ## Diseño de la herramienta :wrench:
 
+
 ## Código en RAPID del módulo utilizado para el desarrollo de la práctica :computer:
 
 ## Simulación en *RobotStudio* - implementación de la práctica con los robots reales :movie_camera:
