@@ -43,6 +43,9 @@ En conjunto con la calibracion y el montaje final de la herramienta se realizo e
 
 ## Simulación en *RobotStudio* - implementación de la práctica con los robots reales :movie_camera:
 
+![sim1](/mediaLab1/simulacion1.mp4)
+![sim2](/mediaLab1/simulacion2.mp4)
+
 
 ![video](/mediaLab1/AJescribiendo.mp4)
 
@@ -55,7 +58,6 @@ Para poder realizar la rutina propuesta fue necesario en primer lugar crear la h
 
 ## Referencias :open_book:
 - Laboratorio 1 - Robotica Industrial No. 1 UNAL.
-- 
 
 
 ## Autores :black_nib:
