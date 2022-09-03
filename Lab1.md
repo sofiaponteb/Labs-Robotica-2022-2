@@ -32,6 +32,7 @@ Las partes anteriormente nombradas se materializaron usando impresión 3D y se e
 
 Acatando las recomendacioens del profesor debido al desconocimiento de las dimensiones finales del modelo se decidió realizar calibración usando el robot real obteniendo lo siguiente:
 
+![calibracion](/mediaLab1/calibracion.jfif)
 ![calibracion](/mediaLab1/marcadorcalibrado.jfif)
 
 En conjunto con la calibración y el montaje final de la herramienta se realizó el diseño de esta en Robotstudio, para así tener el modelo más aproximado a la realidad y poder realizar la programación de la rutina a desarrollar.
@@ -188,17 +189,23 @@ A continuación se muestra el código utilizado:
 
 
 ## Simulación en *RobotStudio* - implementación de la práctica con los robots reales :movie_camera:
-
+Ya con el código de RAPID se procede a ubicar el main y con esto se realiza la simulación del trazado de las letras, para así poder verificar el correcto funcionamiento del mismo antes de realizarlo en el robot del laboratorio, a continuación se muestran las dos simulaciones realizadas:
 <p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/mediaLab1/simulacion1.gif"></p>
 
 <p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/mediaLab1/simulacion2.gif"></p>
+
+Cabe notar que para mayor seguridad al momento de realizar el trazado en el robot real, se realizó una configuración de velocidad en 200 y punto de aproximación en Z de 100. Esto quiere decir que a 100mm del plano de trazado el robot disminuirá su velocidad a 200 para así poder tener una mejor observabilidad de lo que sucede y en una eventualidad poder oprimir el botón de parada antes de cualquier daño que pudiera causarse.
+
+Finalmente, se presenta un video del resultado final obtenido en la práctica de laboratorio:
 
 <p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/mediaLab1/AJescribiendo.gif"></p>
 
 ![letras](/mediaLab1/AJtablero.jfif)
 
 ## Descripción de la solución planteada :page_facing_up:
-Para poder realizar la rutina propuesta fue necesario en primer lugar crear la herramienta en Robotstudio, posterior a esto fue necesario importar la geometria la cual va a seguir la rutina, habiendo implementado todo nuestro montaje procedemos a definir las rutinas para esto usamos la funcion de autodefinir trayectos seleccionando een orden lños trayectos a recorres, ademas, definimos las posiciones articulares de interes para nuestra rutina estas son home y punto medio entre el trayecto. Despues, ingresamos estos trayectos al codigo de RAPID y lo ejecutamos para ver su buen funcionamiento. Por ultimo, subimos el programa al flex expendant y lo ejecutamps usando el controlador y el manipulador del laboratorio.
+Para poder realizar la rutina propuesta fue necesario en primer lugar crear la herramienta en Robotstudio, posterior a esto fue necesario importar la geometría, la cual va a seguir la rutina. Habiendo implementado todo nuestro montaje procedemos a definir las rutinas para esto usamos la función de autodefinir trayectos seleccionando en orden los trayectos a recorrer. Además, definimos las posiciones articulares de interés para nuestra rutina estas son home y punto medio entre el trayecto. Después, ingresamos estos trayectos al código de RAPID y lo ejecutamos para ver su buen funcionamiento. Por último, subimos el programa al flex pendant y lo ejecutamos usando el controlador y el manipulador del laboratorio.
+
+Se obtuvo un programa que es capaz de trazar el dibujo seleccionado en cualquier plano seeccionable dentro del espacio de trabajo del robot, esto gracias a la configuración flexible del workobject, que sólo requiere de la ubicación de los puntos: superior izquierdo, superior derecho e inferior derecho para poder ajustar las coordenadas y realizar el trazado en la superficie indicada.
 
 
 
