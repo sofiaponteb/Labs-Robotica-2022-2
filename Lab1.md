@@ -16,29 +16,175 @@
 
 
 ## Diseño de la herramienta :wrench:
-Para el diseño de la herramienta se uso como base el modelo disponible en el repositorio de Robotstudio y las recomendaciones dadas por el profesor, de está forma se modelo la herramienta a usar en el software de INVENTOR, la cual consta de 3 partes:
-- Estructura base para la fijacion al plato.
+Para el diseño de la herramienta se usó como base el modelo disponible en el repositorio de Robotstudio y las recomendaciones dadas por el profesor, de esta forma se modeló la herramienta a usar en el software de INVENTOR, la cual consta de 3 partes:
+- Estructura base para la fijación al plato.
 
 - PortaHerramienta para sostener el marcador.
 
-- Tapa de fijacion.
-Se utiliza una herramienta con una inclinacion de 30° para disminuir la aparicion de singularidades en el modelo.
-Las partes anteriormente nombradas se materializaron usando impresion 3D y se ensamblaron entre si para asi obtener el montaje final de la herramienta, las uniones se hicieron mediante tornillos o usando pegantes.
+- Tapa de fijación.
+
+Se utiliza una herramienta con una inclinación de 30° para disminuir la aparición de singularidades en el modelo.
+
+Las partes anteriormente nombradas se materializaron usando impresión 3D y se ensamblaron entre sí para así obtener el montaje final de la herramienta, las uniones se hicieron mediante tornillos o usando pegantes.
 
 ![marcador](/mediaLab1/herramienta.jfif)
 ![montaje](/mediaLab1/marcadormontado.jfif)
 
-Acatando las recomendacioens del profesor debido al desconocimiento de las dimensiones finales del modelo se decidio realizar calibracion usando el robot real obteniendo lo siguiente:
+Acatando las recomendacioens del profesor debido al desconocimiento de las dimensiones finales del modelo se decidió realizar calibración usando el robot real obteniendo lo siguiente:
 
 ![calibracion](/mediaLab1/marcadorcalibrado.jfif)
 
-En conjunto con la calibracion y el montaje final de la herramienta se realizo el diseño de está en Robotstudio, para asi tener el modelo mas aproximado a la realidad y poder realizar la programacion de la rutina a desarrollar.
+En conjunto con la calibración y el montaje final de la herramienta se realizó el diseño de esta en Robotstudio, para así tener el modelo más aproximado a la realidad y poder realizar la programación de la rutina a desarrollar.
 
 
 
 ## Código en RAPID del módulo utilizado para el desarrollo de la práctica :computer:
 
+El código en RAPID usado para el desarrollo de la práctica se encuentra en la carpeta ```AJ_Lab1```.
 
+Para realizar este código incialmente se creó un modelo del tablero en inventor, donde se incluyeron las iniciales de los integrantes del grupo. Esta pieza se importó a RobotStudio y se ubicó en el espacio de trabajo con una inclinación de 45°, posteriormente se parametrizaron los targets y la orientación de la herramienta en cada punto para así poder generar 3 paths, correspondientes a las partes interna y externa de la A y el trazo de la J. Finalmente, se creó un target de orientación de joints para crear un path a home y un target en un punto medio arbitrario para mayor seguridad al momento de ejecutar el programa. 
+
+Los parámetros generados se llevaron a la interfaz de RAPID, donde se creó la sección main del código, donde se iniciaba en home, se pasaba por la posición intermedia, se trazaban las letras y finalmente se volvía a home pasando por la posición media. 
+
+A continuación se muestra el código utilizado:
+
+> MODULE Module1
+>         !!!!!!! sección de targets eliminada para mejor visualización del código. Para ver el código completo diríjase a la carpeta AJ_Lab1 de este repositorio
+> !***********************************************************
+>     !
+>     ! Module:  Module1
+>     !
+>     ! Description:
+>     !   <Insert description here>
+>     !
+>     ! Author: Usuario
+>     !
+>     ! Version: 1.0
+>     !
+>     !***********************************************************
+>     
+>    
+>     !***********************************************************
+>     !
+>     ! Procedure main
+>     !
+>     !   This is the entry point of your program
+>     !
+>     !***********************************************************
+>     PROC main()
+>     GoHome ;
+>     GoMedio ;
+>     A1 ;
+>     A2 ;
+>     J ;
+>     GoMedio ;
+>     GoHome ;
+>     ENDPROC
+>     PROC Path_10()
+>         MoveL Target_10,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_20,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_30,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_40,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_50,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_60,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_70,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_80,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_90,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_100,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_110,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_120,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_130,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>     ENDPROC
+>     PROC Path_20()
+>         MoveL Target_140,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_150,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_160,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_170,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_180,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_190,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>    ENDPROC
+>     PROC Path_30()
+>         MoveL Target_200,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_210,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_220,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_230,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_240,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_250,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_260,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_270,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_280,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_290,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_300,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_310,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_320,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_330,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_340,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_350,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_360,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_370,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_380,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_390,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_400,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_410,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_420,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_430,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>     ENDPROC
+>     PROC A1()
+>         MoveL Target_10,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_20,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_30,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_40,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_50,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_60,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_70,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_80,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_90,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_100,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_110,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_120,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_130,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>     ENDPROC
+>     PROC A2()
+>         MoveL Target_140,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_150,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_160,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_170,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_180,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_190,v200,z10,tool_lab1\WObj:=tabla_AJ;
+>     ENDPROC
+>     PROC J()
+>         MoveL Target_200,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_210,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_220,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_230,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_240,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_250,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_260,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_270,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_280,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_290,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_300,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_310,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_320,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_330,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_340,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_350,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_360,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_370,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_380,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_390,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_400,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_410,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_420,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>         MoveL Target_430,v200,z100,tool_lab1\WObj:=tabla_AJ;
+>     ENDPROC
+>     PROC GoHome()
+>         MoveAbsJ Home,v1000,z100,tool_lab1\WObj:=tabla_AJ;
+>     ENDPROC
+>     PROC GoMedio()
+>         MoveAbsJ Medio,v1000,z100,tool_lab1\WObj:=tabla_AJ;
+>     ENDPROC
+> ENDMODULE
 
 
 ## Simulación en *RobotStudio* - implementación de la práctica con los robots reales :movie_camera:
