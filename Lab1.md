@@ -49,9 +49,10 @@ Los parámetros generados se llevaron a la interfaz de RAPID, donde se creó la 
 
 A continuación se muestra el código utilizado:
 
-> MODULE Module1
->         !!!!!!! sección de targets eliminada para mejor visualización del código. Para ver el código completo diríjase a la carpeta AJ_Lab1 de este repositorio
-> !***********************************************************
+>     MODULE Module1
+>     !!!!!!! sección de targets eliminada para mejor visualización del código. 
+>     !!!!!!! Para ver el código completo diríjase a la carpeta AJ_Lab1 de este repositorio
+>     !***********************************************************
 >     !
 >     ! Module:  Module1
 >     !
