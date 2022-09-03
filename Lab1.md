@@ -46,11 +46,7 @@ En conjunto con la calibracion y el montaje final de la herramienta se realizo e
 ![sim1](/mediaLab1/simulacion1.mp4)
 ![sim2](/mediaLab1/simulacion2.mp4)
 
-<video width="320" height="240" controls>
-  <source src="/mediaLab1/AJescribiendo.mp4" type="video/mp4">
-</video>
-
-![video](/mediaLab1/AJescribiendo.mp4)
+![video](/mediaLab1/AJescribiendo.gif)
 
 ![letras](/mediaLab1/AJtablero.jfif)
 
