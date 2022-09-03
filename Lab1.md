@@ -82,55 +82,6 @@ A continuación se muestra el código utilizado:
 >     GoMedio ;
 >     GoHome ;
 >     ENDPROC
->     PROC Path_10()
->         MoveL Target_10,v200,z10,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_20,v200,z10,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_30,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_40,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_50,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_60,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_70,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_80,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_90,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_100,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_110,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_120,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_130,v200,z100,tool_lab1\WObj:=tabla_AJ;
->     ENDPROC
->     PROC Path_20()
->         MoveL Target_140,v200,z10,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_150,v200,z10,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_160,v200,z10,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_170,v200,z10,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_180,v200,z10,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_190,v200,z10,tool_lab1\WObj:=tabla_AJ;
->    ENDPROC
->     PROC Path_30()
->         MoveL Target_200,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_210,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_220,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_230,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_240,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_250,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_260,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_270,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_280,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_290,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_300,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_310,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_320,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_330,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_340,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_350,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_360,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_370,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_380,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_390,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_400,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_410,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_420,v200,z100,tool_lab1\WObj:=tabla_AJ;
->         MoveL Target_430,v200,z100,tool_lab1\WObj:=tabla_AJ;
->     ENDPROC
 >     PROC A1()
 >         MoveL Target_10,v200,z10,tool_lab1\WObj:=tabla_AJ;
 >         MoveL Target_20,v200,z10,tool_lab1\WObj:=tabla_AJ;
