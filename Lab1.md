@@ -137,7 +137,7 @@ A continuación se muestra el código utilizado:
 >     PROC GoMedio()
 >         MoveAbsJ Medio,v1000,z100,tool_lab1\WObj:=tabla_AJ;
 >     ENDPROC
-> ENDMODULE
+>     ENDMODULE
 
 
 ## Simulación en *RobotStudio* - implementación de la práctica con los robots reales :movie_camera:
