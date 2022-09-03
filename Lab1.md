@@ -46,7 +46,7 @@ En conjunto con la calibracion y el montaje final de la herramienta se realizo e
 ![sim1](/mediaLab1/simulacion1.mp4)
 ![sim2](/mediaLab1/simulacion2.mp4)
 
-![video](/mediaLab1/AJescribiendo.gif)
+<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/mediaLab1/AJescribiendo.gif"></p>
 
 ![letras](/mediaLab1/AJtablero.jfif)
 
