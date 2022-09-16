@@ -1,4 +1,4 @@
-# Lab 1 - Robótica industrial #1
+# Lab 2 - Robotica de desarrollo - Intro a ROS #2
 
 ### Contenido
 
