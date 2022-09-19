@@ -27,13 +27,13 @@ Se utiliza una herramienta con una inclinación de 30° para disminuir la aparic
 
 Las partes anteriormente nombradas se materializaron usando impresión 3D y se ensamblaron entre sí para así obtener el montaje final de la herramienta, las uniones se hicieron mediante tornillos o usando pegantes.
 
-![marcador](/mediaLab1/herramienta.jfif)
-![montaje](/mediaLab1/marcadormontado.jfif)
+![marcador](/Lab1/mediaLab1/herramienta.jfif)
+![montaje](/Lab1/mediaLab1/marcadormontado.jfif)
 
 Acatando las recomendacioens del profesor debido al desconocimiento de las dimensiones finales del modelo se decidió realizar calibración usando el robot real obteniendo lo siguiente:
 
-![calibracion](/mediaLab1/calibracion.jfif)
-![calibracion](/mediaLab1/marcadorcalibrado.jfif)
+![calibracion](/Lab1/mediaLab1/calibracion.jfif)
+![calibracion](/Lab1/mediaLab1/marcadorcalibrado.jfif)
 
 En conjunto con la calibración y el montaje final de la herramienta se realizó el diseño de esta en Robotstudio, para así tener el modelo más aproximado a la realidad y poder realizar la programación de la rutina a desarrollar.
 
@@ -152,7 +152,7 @@ Finalmente, se presenta un video del resultado final obtenido en la práctica de
 
 <p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/mediaLab1/AJescribiendo.gif"></p>
 
-![letras](/mediaLab1/AJtablero.jfif)
+![letras](/Lab1/mediaLab1/AJtablero.jfif)
 
 ## Descripción de la solución planteada :page_facing_up:
 Para poder realizar la rutina propuesta fue necesario en primer lugar crear la herramienta en Robotstudio, posterior a esto fue necesario importar la geometría, la cual va a seguir la rutina. Habiendo implementado todo nuestro montaje procedemos a definir las rutinas para esto usamos la función de autodefinir trayectos seleccionando en orden los trayectos a recorrer. Además, definimos las posiciones articulares de interés para nuestra rutina estas son home y punto medio entre el trayecto. Después, ingresamos estos trayectos al código de RAPID y lo ejecutamos para ver su buen funcionamiento. Por último, subimos el programa al flex pendant y lo ejecutamos usando el controlador y el manipulador del laboratorio.
