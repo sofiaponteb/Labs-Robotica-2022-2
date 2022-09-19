@@ -51,9 +51,9 @@ Lo primero que se realiza es la suscripcion al nodo de TurtleSim para poder reci
 
 ![5](/Lab2/mediaLab2/5turtleTeleport.png)
 
-<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/mediaLab1/AJescribiendo.gif"></p>
+<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/tortugabonita.gif"></p>
 
-<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/mediaLab1/AJescribiendo.gif"></p>
+<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/video1.gif"></p>
 
 ## Script en Python :snake:
 
@@ -120,7 +120,7 @@ Lo primero que se realiza es la suscripcion al nodo de TurtleSim para poder reci
 >     listener.join()
 > 
 
-<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/mediaLab1/AJescribiendo.gif"></p>
+<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/python.gif"></p>
 
 
 ## Conclusiones :page_facing_up:
