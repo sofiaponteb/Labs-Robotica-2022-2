@@ -189,7 +189,7 @@ En la parte inicial del codigo se importan las librerias y funciones que usaremo
 Usando la funcion ``keyboard.Listener`` nuestro porgrama queda atento en caso de relizarse una accion en el teclado el program ejecutara la funcion ``on_release`` y dependiendo de cual sea la tecla ingresada realizara su respectivo movimiento, para las teclas A,S,W, y D se envia una instruccion de movimiento dependiendo de cual haya sido presionada usando la funcion ``rospy.Publisher``, por otro lado, para R y ESPACIO se utiliza la funcion ``rospy.ServiceProxy`` con el respectivo moviento a realizar, ya sea absoluto o relativo, cabe resaltar que se usa la funcion ``rospy.ServiceProxy('/clear', Empty)`` para limpiar Turtle1 cuando se presione R.
 
 
-https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/python.movie
+https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/python.mp4
 
 ## Conclusiones :page_facing_up:
 
