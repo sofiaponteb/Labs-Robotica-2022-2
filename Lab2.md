@@ -19,48 +19,48 @@ Una vez iniciado el nodo maestro se escribe en la segunda terminal el comando ``
 Una vez abierta una instacia de matlab para linux se introduce el codigo propuesto por la guia con el cual se busca realizar un conexion con el nodo maestro, definir un publicador y posteriormente manipular este publicador para poder enviar un comando a TurtleSim.
 
 >      
->    %% INICIAL
+>          %% INICIAL
 >    
->    rosinit; %Conexion con nodo maestro
+>          rosinit; %Conexion con nodo maestro
 >    
->    %%
+>          %%
 >    
->    velPub = rospublisher('/turtle1/cmd_vel','geometry_msgs/Twist'); %Creacion publicador
+>          velPub = rospublisher('/turtle1/cmd_vel','geometry_msgs/Twist'); %Creacion publicador
 >    
->    velMsg = rosmessage(velPub); %Creacion de mensaje
+>          velMsg = rosmessage(velPub); %Creacion de mensaje
 >    
->    %%
+>          %%
 >    
->    velMsg.Linear.X = 1; %Valor del mensaje
+>          velMsg.Linear.X = 1; %Valor del mensaje
 >    
->    send(velPub,velMsg); %Envio
+>          send(velPub,velMsg); %Envio
 >    
->    pause(1)
+>          pause(1)
 >    
->    %% SUBSCRIBER
+>          %% SUBSCRIBER
 >    
->    TurtlePose = rossubscriber("/turtle1/pose", "turtlesim/Pose")
+>          TurtlePose = rossubscriber("/turtle1/pose", "turtlesim/Pose")
 >    
->    scanMsg = TurtlePose.LatestMessage
+>          scanMsg = TurtlePose.LatestMessage
 >    
->    %% POSE
+>          %% POSE
 >    
->    TurtleTeleport = rossvcclient("/turtle1/teleport_absolute")
+>          TurtleTeleport = rossvcclient("/turtle1/teleport_absolute")
 >    
->    waitForServer(TurtleTeleport);
+>          waitForServer(TurtleTeleport);
 >    
->    TurtleMsg = rosmessage(TurtleTeleport)
+>          TurtleMsg = rosmessage(TurtleTeleport)
 >    
->    TurtleMsg.X = 5;
+>          TurtleMsg.X = 5;
 >    
->    TurtleMsg.Y = 3;
+>          TurtleMsg.Y = 3;
 >    
->    TurtleMsg.Theta = 2*pi/3 ;
+>          TurtleMsg.Theta = 2*pi/3 ;
 >    
->    call(TurtleTeleport,TurtleMsg)
+>          call(TurtleTeleport,TurtleMsg)
 >    
->    %% FINALIZAR NODO MAESTRO
->    rosshutdown
+>          %% FINALIZAR NODO MAESTRO
+>          rosshutdown
 
 
 Lo primero que se realiza es la suscripcion al nodo de TurtleSim para poder recibir datos, esto se hace mediante la funcion ```rossubscriber``` cuyos argumentos son los datos que se desean recibir, que en este caso son los provenientes de turtle1 acerca de la posicion ```/turtle1/pose```, y el segundo argumento es el tipo de mensaje que se va a recibir, de forma general tendra la estructura de la posicion proveniente de TurtleSim ```/TurtleSim/pose```. 
