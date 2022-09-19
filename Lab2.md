@@ -191,6 +191,8 @@ Usando la funcion ``keyboard.Listener`` nuestro porgrama queda atento en caso de
 
 https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/python.mp4
 
+https://youtu.be/LoApWT4PG1k
+
 ## Conclusiones :page_facing_up:
 
 - Es importante conocer diversas formas de realizar código para robótica, de esta forma se puede facilitar en gran medida la ejecución de diferentes aplicaciones dependiendo de la necesidad que se tenga.
