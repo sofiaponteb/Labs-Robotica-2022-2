@@ -18,7 +18,7 @@ Una vez iniciado el nodo maestro se escribe en la segunda terminal el comando ``
 ![2](/Lab2/mediaLab2/2rosrun.png)
 Una vez abierta una instacia de matlab para linux se introduce el codigo propuesto por la guia con el cual se busca realizar un conexion con el nodo maestro, definir un publicador y posteriormente manipular este publicador para poder enviar un comando a TurtleSim.
 
->   
+>      
 >    %% INICIAL
 >    
 >    rosinit; %Conexion con nodo maestro
@@ -83,118 +83,119 @@ A continuación se muestra un animación del movimiento de la tortuga al usar la
 El codigo desarrollado para operar una tortuga del paquete turtlesim con el teclado es el siguiente:
 
 >    
->    from pynput import keyboard
+>       from pynput import keyboard
+>       
+>       import rospy
+>       
+>       import roslaunch
+>       
+>       from geometry_msgs.msg import Twist
 >    
->    import rospy
+>       from turtlesim.srv import TeleportAbsolute, TeleportRelative
 >    
->    import roslaunch
+>       import termios, sys, os
 >    
->    from geometry_msgs.msg import Twist
+>       from numpy import pi
 >    
->    from turtlesim.srv import TeleportAbsolute, TeleportRelative
+>       from std_srvs.srv import Empty
 >    
->    import termios, sys, os
+>       rospy.init_node('TeleopKey', anonymous=True)
 >    
->    from numpy import pi
->    
->    from std_srvs.srv import Empty
->    
->    rospy.init_node('TeleopKey', anonymous=True)
->    
->    def pubVel(speed, angspeed, t):
->    
->        velpub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
+>       def pubVel(speed, angspeed, t):
+>       
+>           velpub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
 >        
->        velmsg = Twist()
+>           velmsg = Twist()
 >        
->        velmsg.linear.x = speed
+>           velmsg.linear.x = speed
 >        
->        velmsg.angular.z = angspeed
+>           velmsg.angular.z = angspeed
 >        
->        velpub.publish(velmsg)
+>           velpub.publish(velmsg)
 >        
->        endTime = rospy.Time.now() + rospy.Duration(t)
+>           endTime = rospy.Time.now() + rospy.Duration(t)
 >        
->        while rospy.Time.now() < endTime:
+>           while rospy.Time.now() < endTime:
 >        
->            velpub.publish(velmsg)
+>               velpub.publish(velmsg)
 >    
->    def on_press(key):
+>       def on_press(key):
 >    
->        return
+>           return
 >    
->    def on_release(key):
+>       def on_release(key):
 >    
->        if key == keyboard.KeyCode.from_char('w'):
+>           if key == keyboard.KeyCode.from_char('w'):
 >        
->            pubVel(1, 0, 0.5)
+>               pubVel(1, 0, 0.5)
 >            
->        if key == keyboard.KeyCode.from_char('s'):
+>           if key == keyboard.KeyCode.from_char('s'):
 >        
->            pubVel(-1, 0, 0.5)
+>               pubVel(-1, 0, 0.5)
 >            
->        if key == keyboard.KeyCode.from_char('a'):
+>           if key == keyboard.KeyCode.from_char('a'):
 >        
->            pubVel(0, -1, 0.5)
+>               pubVel(0, -1, 0.5)
 >            
->        if key == keyboard.KeyCode.from_char('d'):
+>           if key == keyboard.KeyCode.from_char('d'):
 >        
->            pubVel(0, 1, 0.5)
+>               pubVel(0, 1, 0.5)
 >            
->        if key == keyboard.Key.space:
+>           if key == keyboard.Key.space:
 >        
->             try:
->                    # Wait for the service to be available
+>                try:
+>                       # Wait for the service to be available
 >                    
->                    rospy.wait_for_service('/turtle1/teleport_relative')
+>                       rospy.wait_for_service('/turtle1/teleport_relative')
 >                    
->                    # Create handle to call the service
+>                       # Create handle to call the service
 >                    
->                    giro = rospy.ServiceProxy('/turtle1/teleport_relative', TeleportRelative)
+>                       giro = rospy.ServiceProxy('/turtle1/teleport_relative', TeleportRelative)
 >                    
->                    giro(0, pi)
+>                       giro(0, pi)
 >                    
->                    rospy.loginfo('Turtle rotated')
+>                       rospy.loginfo('Turtle rotated')
 >                    
->             except rospy.ServiceException as e:  # If the service is not available, print a warning
+>                except rospy.ServiceException as e:  # If the service is not available, print a warning
 >             
->                    rospy.logwarn("Service teleport_relative call failed")
+>                       rospy.logwarn("Service teleport_relative call failed")
 >                    
->        if key == keyboard.KeyCode.from_char('r'):
+>           if key == keyboard.KeyCode.from_char('r'):
 >        
->             try:
->                    rospy.wait_for_service('/turtle1/teleport_absolute')
+>                try:
+>                       rospy.wait_for_service('/turtle1/teleport_absolute')
 >                    
->                    teleportOrigen = rospy.ServiceProxy('/turtle1/teleport_absolute', TeleportAbsolute)
+>                       teleportOrigen = rospy.ServiceProxy('/turtle1/teleport_absolute', TeleportAbsolute)
 >                    
->                    Reset=teleportOrigen(5.5, 5.5, 0)
+>                       Reset=teleportOrigen(5.5, 5.5, 0)
 >    
->                    rospy.wait_for_service('/clear')  # Clear the trajectory
+>                       rospy.wait_for_service('/clear')  # Clear the trajectory
 >                    
->                    clearTrajec = rospy.ServiceProxy('/clear', Empty)
+>                       clearTrajec = rospy.ServiceProxy('/clear', Empty)
 >                    
->                    Reset = clearTrajec()
+>                       Reset = clearTrajec()
 >    
->                    rospy.loginfo('Turtle reset')
+>                       rospy.loginfo('Turtle reset')
 >                    
->             except rospy.ServiceException as e:
+>                except rospy.ServiceException as e:
 >             
->                        rospy.logwarn("Service teleport_absolute call failed")
+>                           rospy.logwarn("Service teleport_absolute call failed")
 >    
->    with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
+>       with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
 >    
->        listener.join()
+>           listener.join()
 >    
 En la parte inicial del codigo se importan las librerias y funciones que usaremos a lo largo del programa, en esta seccion se destaca la siguiente instruccion ``from turtlesim.srv import TeleportAbsolute, TeleportRelative`` los cuales incluyen los comandos de movimiento relativo y absoluto de la tortuga.
 Usando la funcion ``keyboard.Listener`` nuestro porgrama queda atento en caso de relizarse una accion en el teclado el program ejecutara la funcion ``on_release`` y dependiendo de cual sea la tecla ingresada realizara su respectivo movimiento, para las teclas A,S,W, y D se envia una instruccion de movimiento dependiendo de cual haya sido presionada usando la funcion ``rospy.Publisher``, por otro lado, para R y ESPACIO se utiliza la funcion ``rospy.ServiceProxy`` con el respectivo moviento a realizar, ya sea absoluto o relativo, cabe resaltar que se usa la funcion ``rospy.ServiceProxy('/clear', Empty)`` para limpiar Turtle1 cuando se presione R.
 
 
 <p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/python.gif"></p>
-oyeee el gift quedo muy corto :"c
 
 ## Conclusiones :page_facing_up:
 
-
+- Es importante conocer diversas formas de realizar código para robótica, de esta forma se puede facilitar en gran medida la ejecución de diferentes aplicaciones dependiendo de la necesidad que se tenga.
+- El framework ROS permite realizar diversas operaciones de una manera rápida y sencilla, por ello es importante reconocer su funcionamiento y herramientas disponibles.
+- El trabajo en equipo permite adquirir un mayor aprendizaje en el desarrollo de los ejercicios, ya que se genera discusión acerca de lo que se está realizando y cuál es la mejor manera de hacerlo.
 
 ## Referencias :open_book:
 - Laboratorio 2 - Robotica de desarrollo - Intro a ROS UNAL.
