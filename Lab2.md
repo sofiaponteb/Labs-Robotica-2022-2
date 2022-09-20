@@ -63,7 +63,7 @@ Una vez abierta una instacia de matlab para linux se introduce el codigo propues
 >          rosshutdown
 
 
-Para recibir un mensaje de turtlesim primero que se realiza es la suscripcion al nodo de TurtleSim para poder recibir datos, esto se hace mediante la funcion ```rossubscriber``` cuyos argumentos son los datos que se desean recibir, que en este caso son los provenientes de turtle1 acerca de la posicion ```/turtle1/pose```, y el segundo argumento es el tipo de mensaje que se va a recibir, de forma general tendra la estructura de la posicion proveniente de TurtleSim ```/TurtleSim/pose```. 
+Para recibir un mensaje de turtlesim lo primero que se realiza es la suscripcion al nodo de TurtleSim para poder recibir datos, esto se hace mediante la funcion ```rossubscriber``` cuyos argumentos son los datos que se desean recibir, que en este caso son los provenientes de turtle1 acerca de la posicion ```/turtle1/pose```, y el segundo argumento es el tipo de mensaje que se va a recibir, de forma general tendra la estructura de la posicion proveniente de TurtleSim ```/TurtleSim/pose```. 
 ![3](/Lab2/mediaLab2/3turtlePos.png)
 
 A continuación se utiliza la función ```TurtleTeleport``` para asignar posiciones arbitrarias a la tortuga por medio de los atributos ```TurtleMsg.X``` y ```TurtleMsg.Y```. Posteriormente se realiza el llamado a la función Teleport enviándole como argumento los atributos asignados en TurtleMsg.
@@ -185,8 +185,10 @@ El codigo desarrollado para operar una tortuga del paquete turtlesim con el tecl
 >    
 >           listener.join()
 >    
-En la parte inicial del codigo se importan las librerias y funciones que usaremos a lo largo del programa, en esta seccion se destaca la siguiente instruccion ``from turtlesim.srv import TeleportAbsolute, TeleportRelative`` la cual incluye los comandos de movimiento relativo y absoluto de la tortuga.
-Usando la funcion ``keyboard.Listener`` nuestro programa queda atento para recibir cualquier evento proveniente del teclado, en caso de realizarse una accion en el teclado el programa ejecutara la funcion ``on_release`` y dependiendo de cual sea la tecla ingresada realizara su respectivo movimiento, para las teclas A,S,W, y D se envia una instruccion de movimiento dependiendo de cual haya sido presionada, usando la funcion ``pubVel`` con los respectivos parametros para cada movimiento, en esta se hace uso de la funcion ``rospy.Publisher`` con la que se envia la velocidad lineal y de giro deseada, por otro lado, para R y ESPACIO se utiliza la funcion ``rospy.ServiceProxy`` con el respectivo movimiento a realizar, ya sea absoluto o relativo, cabe resaltar que se usa la funcion ``rospy.ServiceProxy('/clear', Empty)`` para limpiar Turtle1 cuando se presiona R.
+En la parte inicial del codigo se importan las librerias y funciones que usaremos a lo largo del programa, en esta seccion se destaca la siguiente instruccion ``from turtlesim.srv import TeleportAbsolute, TeleportRelative`` la cual importa los comandos de movimiento relativo y absoluto de la TurtleSim.
+Para la interaccion con el teclado se usa la funcion ``keyboard.Listener`` con la cual nuestro programa queda atento para recibir cualquier evento proveniente del teclado, en caso de realizarse una accion en el teclado el programa ejecutara la funcion ``on_release`` y dependiendo de cual sea la tecla ingresada realizara su respectivo movimiento. 
+Para las teclas A,S,W y D se envia una instruccion de movimiento dependiendo de cual haya sido presionada, usando la funcion ``pubVel`` con los respectivos parametros para cada movimiento, en esta se hace uso de la funcion ``rospy.Publisher`` con la que se envia la velocidad lineal y angular deseada.
+Por otro lado, para R y ESPACIO se utiliza la funcion ``rospy.ServiceProxy`` con el respectivo movimiento a realizar, ya sea absoluto o relativo, cabe resaltar que se usa la funcion ``rospy.ServiceProxy('/clear', Empty)`` para limpiar Turtle1 cuando se presiona R.
 
 
 https://youtu.be/LoApWT4PG1k
