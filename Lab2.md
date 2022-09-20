@@ -186,8 +186,11 @@ El codigo desarrollado para operar una tortuga del paquete turtlesim con el tecl
 >           listener.join()
 >    
 En la parte inicial del codigo se importan las librerias y funciones que usaremos a lo largo del programa, en esta seccion se destaca la siguiente instruccion ``from turtlesim.srv import TeleportAbsolute, TeleportRelative`` la cual importa los comandos de movimiento relativo y absoluto de la TurtleSim.
+
 Para la interaccion con el teclado se usa la funcion ``keyboard.Listener`` con la cual nuestro programa queda atento para recibir cualquier evento proveniente del teclado, en caso de realizarse una accion en el teclado el programa ejecutara la funcion ``on_release`` y dependiendo de cual sea la tecla ingresada realizara su respectivo movimiento. 
+
 Para las teclas A,S,W y D se envia una instruccion de movimiento dependiendo de cual haya sido presionada, usando la funcion ``pubVel`` con los respectivos parametros para cada movimiento, en esta se hace uso de la funcion ``rospy.Publisher`` con la que se envia la velocidad lineal y angular deseada.
+
 Por otro lado, para R y ESPACIO se utiliza la funcion ``rospy.ServiceProxy`` con el respectivo movimiento a realizar, ya sea absoluto o relativo, cabe resaltar que se usa la funcion ``rospy.ServiceProxy('/clear', Empty)`` para limpiar Turtle1 cuando se presiona R.
 
 
