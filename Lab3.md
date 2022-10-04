@@ -15,6 +15,8 @@
 
 
 
+>MODULE Module1
+>    !!!!!!! Para ver el código completo diríjase a la carpeta AJ_Lab1 de este repositorio
 >    !Definicion de contantes...
 >    VAR intnum Mantenimiento;
 >    
@@ -79,6 +81,7 @@
 >        RestoPath;
 >       StartMove;
 >    ENDTRAP
+>ENDMODULE    
 
 ![5](/Lab3/mediaLab3/5turtleTeleport.png)
 
