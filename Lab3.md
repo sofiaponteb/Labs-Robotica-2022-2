@@ -138,7 +138,20 @@
 >    
 > ENDMODULE    
 
-Para la manipulacion de las entradas digitales se uso el comando ``` WaitDI```  para el inicio de la rutina de ecritura("EntDI_1") e interrupciones para la rutina de mantenimiento("EntDI_2"), estó con el objetivo de hacer un proceso mas dinamico y que el mantenimiento se pueda realizar en cualquier instante de la rutina de escritura. Acontinuacion se realiza una breve descripcion de cada uno de los comandos usados ```VAR intnum Mantenimiento``` nos permite definir una rutina de interupcion con nombre "Mantenimiento",  ```IEnable```  habilita las interrupciones, ```CONNECT Mantenimiento WITH OpMantenimiento```  conecta la rutina "Mantenimiento" con la operacion "OpMantenimiento",```ISignalDI EntDI_2,1, Mantenimiento ``` se define una interrupcion por flanco de subida proveniente de "EntDI_2" que realiza la rutina "Mantenimiento", ```SetDO SalDO_1,0 ``` la impone a la salida digital "SalDO_1" el valor de "0", ``` WaitDI EntDI_1,1``` realiza una pausa del codigo hasta que "EntDI_1" sea 1, ```VAR robtarget parada``` crea una variable de tipo robtarget con nombre "parada", ```StopMove``` frena el movimiento del manipulador,```StorePath``` almacena el path actual, ```parada:=crobt(\Tool:=tool_lab1\WObj:=tabla_AJ)``` almacena el robtarget actual en "parada", ```StorePath``` restaura el path, ```StartMove``` reinicia el movimiento.
+Para la manipulacion de las entradas digitales se uso el pulsador "EntDI_1" para el inicio de la rutina de escritura y el pulsador "EntDI_2" como la interrupcion para iniciar la rutina de mantenimiento, estó con el objetivo de hacer un proceso mas dinamico y que el mantenimiento se pueda realizar en cualquier instante de la rutina de escritura. 
+A continuacion se realiza una breve descripcion de los principales comandos usados:
+- ```VAR intnum Mantenimiento``` nos permite definir una rutina de interupcion con nombre "Mantenimiento".
+- ```IEnable```  habilita las interrupciones
+-  ```CONNECT Mantenimiento WITH OpMantenimiento```  conecta la rutina "Mantenimiento" con la operacion "OpMantenimiento"
+-  ```ISignalDI EntDI_2,1, Mantenimiento ``` se define una interrupcion por flanco de subida proveniente de "EntDI_2" que realiza la rutina "Mantenimiento"
+-   ```SetDO SalDO_1,0 ``` la impone a la salida digital "SalDO_1" el valor de "0"
+-   ``` WaitDI EntDI_1,1``` realiza una pausa del codigo hasta que "EntDI_1" sea 1
+-   ```VAR robtarget parada``` crea una variable de tipo robtarget con nombre "parada"
+-   ```StopMove``` frena el movimiento del manipulador
+-   ```StorePath``` almacena el path actual
+-    ```parada:=crobt(\Tool:=tool_lab1\WObj:=tabla_AJ)``` almacena el robtarget actual en "parada"
+-     ```StorePath``` restaura el path
+-      ```StartMove``` reinicia el movimiento.
 Los ultimos 5 comando son los que permiten al dispositivo pausar el movimiento y retormarlo en donde se presento la interrupcion.
 
 ![5](/Lab3/mediaLab3/5turtleTeleport.png)
