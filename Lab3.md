@@ -13,29 +13,13 @@
 
 ## Código en RAPID :computer:
 
-
-
->MODULE Module1
->
->    !!!!!!! Para ver el código completo diríjase a la carpeta AJ_Lab1 de este repositorio
+> MODULE Module1
+> 
+>    !!!!!!! Para ver el código completo diríjase a la carpeta Lab3AJ de este repositorio
 >    
->    !Definicion de contantes...
+>    !!Definicion de contantes...
 >    
 >    VAR intnum Mantenimiento;
->    
->    !***********************************************************
->    
->    !
->    
->    ! Procedimiento Main
->    
->    !
->    
->    !   Este es el punto de entrada de su programa
->    
->    !
->    
->    !***********************************************************
 >    
 >    PROC main()
 >    
@@ -74,37 +58,43 @@
 >        ENDWHILE
 >        
 >    ENDPROC
->    
+>
+>
 >    PROC A1()
 >    
->        !Movimiento Trayectoria A1...
+>        !!Movimiento Trayectoria A1...
 >        
 >    ENDPROC
->    
+>
+>
 >    PROC A2()
 >    
->        !Movimiento Trayectoria A2...        
+>        !!Movimiento Trayectoria A2...        
 >        
 >    ENDPROC
->    
+>
+>
 >    PROC J()
 >    
->        !Movimiento Trayectoria J...         
+>        !!Movimiento Trayectoria J...         
 >        
 >    ENDPROC
->    
+>
+>
 >    PROC GoGoHome()
 >    
 >        MoveAbsJ GoHome,v1000,z100,tool_lab1\WObj:=tabla_AJ;
 >        
 >    ENDPROC
->    
+>
+>
 >    PROC GoMiddle()
 >    
 >        MoveAbsJ Middle,v1000,z100,tool_lab1\WObj:=tabla_AJ;
 >        
 >    ENDPROC
->    
+>
+>
 >    PROC GoMantenimiento()
 >    
 >        GoMiddle;
@@ -112,7 +102,8 @@
 >        MoveAbsJ Path_mantenimiento,v200,z100,tool_lab1\WObj:=tabla_AJ;
 >        
 >    ENDPROC
->    
+>
+>
 >    TRAP OpMantenimiento
 >    
 >        VAR robtarget parada;
@@ -145,7 +136,10 @@
 >       
 >    ENDTRAP
 >    
->ENDMODULE    
+> ENDMODULE    
+
+Para la manipulacion de las entradas digitales se uso el comando ``` WaitDI```  para el inicio de la rutina de ecritura("EntDI_1") e interrupciones para la rutina de mantenimiento("EntDI_2"), estó con el objetivo de hacer un proceso mas dinamico y que el mantenimiento se pueda realizar en cualquier instante de la rutina de escritura. Acontinuacion se realiza una breve descripcion de cada uno de los comandos usados ```VAR intnum Mantenimiento``` nos permite definir una rutina de interupcion con nombre "Mantenimiento",  ```IEnable```  habilita las interrupciones, ```CONNECT Mantenimiento WITH OpMantenimiento```  conecta la rutina "Mantenimiento" con la operacion "OpMantenimiento",```ISignalDI EntDI_2,1, Mantenimiento ``` se define una interrupcion por flanco de subida proveniente de "EntDI_2" que realiza la rutina "Mantenimiento", ```SetDO SalDO_1,0 ``` la impone a la salida digital "SalDO_1" el valor de "0", ``` WaitDI EntDI_1,1``` realiza una pausa del codigo hasta que "EntDI_1" sea 1, ```VAR robtarget parada``` crea una variable de tipo robtarget con nombre "parada", ```StopMove``` frena el movimiento del manipulador,```StorePath``` almacena el path actual, ```parada:=crobt(\Tool:=tool_lab1\WObj:=tabla_AJ)``` almacena el robtarget actual en "parada", ```StorePath``` restaura el path, ```StartMove``` reinicia el movimiento.
+Los ultimos 5 comando son los que permiten al dispositivo pausar el movimiento y retormarlo en donde se presento la interrupcion.
 
 ![5](/Lab3/mediaLab3/5turtleTeleport.png)
 
@@ -153,7 +147,7 @@
 <p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/tortugabonita.gif"></p>
 
 ## Descripción de la Solución Planteada
-
+Lo primero que se realizo fue definir las entradas y salidas en el codigo RAPPID, posterior 
 
 ## Conclusiones :page_facing_up:
 
