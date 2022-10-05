@@ -15,16 +15,11 @@
 
 >    MODULE Module1
 > 
->     !!!!!!! Para ver el código completo diríjase a la carpeta Lab3AJ de este repositorio
->    
->     !!Definicion de constantes...
->    
->     VAR intnum Mantenimiento;
->    
->     PROC main()
->    
->        !Añada aquí su código
->        
+>     !!!!!!! Para ver el código completo diríjase a la carpeta Lab3AJ de este repositorio   
+>     !!Definicion de constantes...  
+>     VAR intnum Mantenimiento;  
+>     PROC main()   
+>        !Añada aquí su código      
 >        IEnable;
 >        
 >        CONNECT Mantenimiento WITH OpMantenimiento;
