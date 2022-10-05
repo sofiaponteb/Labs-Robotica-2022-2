@@ -168,6 +168,8 @@ Partiendo de la programacion realizada en la practica 1, lo primero que se reali
 
 En el siguiente gif se puede observar la implementacion de la practica con los robots reales realizando la ubicacion del WorkObject:
 <p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab3/mediaLab3/Video_simulacion_vfinal2.gif"></p>
+
+
 ## Conclusiones :page_facing_up:
 -Las Entradas digitales permiten el adquisicion y manipulacion de informacion de forma sencilla, existen diferentes comandos que se pueden usan dependiendo de las necesidad del programador, siendo estas ideales para aquellas funciones en la cuales solo se desee saber 2 esatdos en una variable de interes.
 -Las Salidas digitales permiten la manipulacion de elementos cuya funcionalidad sea digital, por ejemplo luces o electroactuadores, en los cuales solo se tengan 2 estados de interes, en programas mas robuztos estas salidas pueden permitir el control en procesos industriales de a gran escala.
