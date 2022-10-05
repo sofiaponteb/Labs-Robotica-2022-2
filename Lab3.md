@@ -147,17 +147,15 @@ A continuacion se realiza una breve descripcion de los principales comandos usad
 -   ```SetDO SalDO_1,0 ``` la impone a la salida digital "SalDO_1" el valor de "0"
 -   ``` WaitDI EntDI_1,1``` realiza una pausa del codigo hasta que "EntDI_1" sea 1
 -   ```VAR robtarget parada``` crea una variable de tipo robtarget con nombre "parada"
--   ```StopMove``` frena el movimiento del manipulador
--   ```StorePath``` almacena el path actual
--    ```parada:=crobt(\Tool:=tool_lab1\WObj:=tabla_AJ)``` almacena el robtarget actual en "parada"
--     ```StorePath``` restaura el path
--      ```StartMove``` reinicia el movimiento.
-Los ultimos 5 comando son los que permiten al dispositivo pausar el movimiento y retormarlo en donde se presento la interrupcion.
+-   ```StopMove``` frena el movimiento del manipulador.
+-   ```StorePath``` almacena el path actual.
+-  ```parada:=crobt(\Tool:=tool_lab1\WObj:=tabla_AJ)``` almacena el robtarget actual en "parada".
+-  ```StorePath``` restaura el path.
+-  ```StartMove``` reinicia el movimiento.
+Los ultimos 5 comando son los que permiten al programa pausar el movimiento y retormarlo en donde se presento la interrupcion.
+En el siguiente gif se puede observar la simulacion del Programa en RobotStudio: 
 
-![5](/Lab3/mediaLab3/5turtleTeleport.png)
-
-
-<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/tortugabonita.gif"></p>
+<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab3/mediaLab3/Video_simulacion_vfinal.gif"></p>
 
 ## Descripción de la Solución Planteada
 Lo primero que se realizo fue definir las entradas y salidas en el codigo RAPPID, posterior 
