@@ -13,15 +13,15 @@
 
 ## Código en RAPID :computer:
 
-> MODULE Module1
+>    MODULE Module1
 > 
->    !!!!!!! Para ver el código completo diríjase a la carpeta Lab3AJ de este repositorio
+>     !!!!!!! Para ver el código completo diríjase a la carpeta Lab3AJ de este repositorio
 >    
->    !!Definicion de constantes...
+>     !!Definicion de constantes...
 >    
->    VAR intnum Mantenimiento;
+>     VAR intnum Mantenimiento;
 >    
->    PROC main()
+>     PROC main()
 >    
 >        !Añada aquí su código
 >        
@@ -57,54 +57,54 @@
 >            
 >        ENDWHILE
 >        
->    ENDPROC
+>     ENDPROC
 >
 >
->    PROC A1()
+>     PROC A1()
 >    
 >        !!Movimiento Trayectoria A1...
 >        
->    ENDPROC
+>     ENDPROC
 >
 >
->    PROC A2()
+>     PROC A2()
 >    
 >        !!Movimiento Trayectoria A2...        
 >        
->    ENDPROC
+>     ENDPROC
 >
 >
->    PROC J()
+>     PROC J()
 >    
 >        !!Movimiento Trayectoria J...         
 >        
->    ENDPROC
+>     ENDPROC
 >
 >
->    PROC GoGoHome()
+>     PROC GoGoHome()
 >    
 >        MoveAbsJ GoHome,v1000,z100,tool_lab1\WObj:=tabla_AJ;
 >        
->    ENDPROC
+>     ENDPROC
 >
 >
->    PROC GoMiddle()
+>     PROC GoMiddle()
 >    
 >        MoveAbsJ Middle,v1000,z100,tool_lab1\WObj:=tabla_AJ;
 >        
->    ENDPROC
+>     ENDPROC
 >
 >
->    PROC GoMantenimiento()
+>     PROC GoMantenimiento()
 >    
 >        GoMiddle;
 >        
 >        MoveAbsJ Path_mantenimiento,v200,z100,tool_lab1\WObj:=tabla_AJ;
 >        
->    ENDPROC
+>     ENDPROC
 >
 >
->    TRAP OpMantenimiento
+>     TRAP OpMantenimiento
 >    
 >        VAR robtarget parada;
 >        
@@ -134,9 +134,9 @@
 >        
 >       StartMove;
 >       
->    ENDTRAP
+>     ENDTRAP
 >    
-> ENDMODULE    
+>   ENDMODULE    
 
 Para la manipulacion de las entradas digitales se uso el pulsador "EntDI_1" para el inicio de la rutina de escritura y el pulsador "EntDI_2" como la interrupcion para iniciar la rutina de mantenimiento, estó con el objetivo de hacer un proceso mas dinamico y que el mantenimiento se pueda realizar en cualquier instante de la rutina de escritura. 
 A continuacion se realiza una breve descripcion de los principales comandos usados:
