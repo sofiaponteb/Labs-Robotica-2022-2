@@ -17,7 +17,7 @@
 > 
 >    !!!!!!! Para ver el código completo diríjase a la carpeta Lab3AJ de este repositorio
 >    
->    !!Definicion de contantes...
+>    !!Definicion de constantes...
 >    
 >    VAR intnum Mantenimiento;
 >    
@@ -152,20 +152,34 @@ A continuacion se realiza una breve descripcion de los principales comandos usad
 -  ```parada:=crobt(\Tool:=tool_lab1\WObj:=tabla_AJ)``` almacena el robtarget actual en "parada".
 -  ```StorePath``` restaura el path.
 -  ```StartMove``` reinicia el movimiento.
+
 Los ultimos 5 comando son los que permiten al programa pausar el movimiento y retormarlo en donde se presento la interrupcion.
+
 En el siguiente gif se puede observar la simulacion del Programa en RobotStudio: 
 
-<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab3/mediaLab3/Video_simulacion_vfinal.gif"></p>
+<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab3/mediaLab3/Video_simulacion_vfinal2.gif"></p>
+
+En el siguiente gif se puede observar la implementacion de la practica con los robots reales sin realizar la ubicacion del WorkObject:
+https://youtu.be/raot1BQLAMo
+
 
 ## Descripción de la Solución Planteada
-Lo primero que se realizo fue definir las entradas y salidas en el codigo RAPPID, posterior 
+Partiendo de la programacion realizada en la practica 1, lo primero que se realiza es definir las entradas y salidas (E/S) en RobotStudio, posterior a esto se define la secuencia de mantenimiento, teniendo definidas la secuencia de operacion y la secuencia de mantenimiento, procedemos a definir el ciclo de operacion de nuestro programa, el cual incluye comandos dependientes de las Entradas y que modifican el valor de las Salidas, para esta labor nuestro codigo usa los siguientes comandos ```SetDO ```,```ISignalDI``` y ``` WaitDI```, en donde cabe resaltar que nuestra secuencia principal sera la de operacion y la secuencia mantenimiento se ejecutara como una interrupcion si se activa la entrada "EntDI_2". Por ultimo se carga el programa en el controlador del laboratorio, se cambia el nombre de las entradas y las salidas para que correspondan con las del controlador y se ejecuta el programa.
 
+En el siguiente gif se puede observar la implementacion de la practica con los robots reales realizando la ubicacion del WorkObject:
+<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab3/mediaLab3/Video_simulacion_vfinal2.gif"></p>
 ## Conclusiones :page_facing_up:
+-Las Entradas digitales permiten el adquisicion y manipulacion de informacion de forma sencilla, existen diferentes comandos que se pueden usan dependiendo de las necesidad del programador, siendo estas ideales para aquellas funciones en la cuales solo se desee saber 2 esatdos en una variable de interes.
+-Las Salidas digitales permiten la manipulacion de elementos cuya funcionalidad sea digital, por ejemplo luces o electroactuadores, en los cuales solo se tengan 2 estados de interes, en programas mas robuztos estas salidas pueden permitir el control en procesos industriales de a gran escala.
+-Las interrupcione son ideales en procesos donde se tenga prioridad una accion sobre la otras, ya que nuestro caso es didactico no son necesarias pero al realizar el programa con esta funcionaldiad se puede tener un apredizaje mas profundo sobre el uso de E/S digitales.
 
 
 
 ## Referencias :open_book:
 - Laboratorio 3 - Robotica Industrial 2 - Entradas y Salidas.
+- Manual de referencia técnica. Instrucciones, funciones y tipos de datos de RAPID. Software de controlador para IRC5. RobotWare 5.13.
+- Diseño, programación y simulación de estaciones robotizadas industriales con Robotstudio. Agustín Ramos Hurtado.
+
 
 
 ## Autores :black_nib:
