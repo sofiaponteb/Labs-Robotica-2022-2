@@ -21,114 +21,62 @@
 >     PROC main()   
 >        !Añada aquí su código      
 >        IEnable;
->        
 >        CONNECT Mantenimiento WITH OpMantenimiento;
->        
 >        ISignalDI EntDI_2,1, Mantenimiento ;
->        
->        WHILE TRUE DO 
->        
->            SetDO SalDO_1,0;
->            
->            WaitDI EntDI_1,1;
->            
->            SetDO SalDO_1,1;
->            
->            GoGoHome ;
->            
->            GoMiddle ;
->            
+>        WHILE TRUE DO    
+>            SetDO SalDO_1,0;    
+>            WaitDI EntDI_1,1;  
+>            SetDO SalDO_1,1;  
+>            GoGoHome ;  
+>            GoMiddle ;  
 >            A1 ;
->            
 >            A2 ;
->            
->            J ;
->            
+>            J ; 
 >            GoMiddle ;
->            
 >            GoGoHome ;
->            
->            !IDelete Mantenimiento;
->            
 >        ENDWHILE
->        
 >     ENDPROC
->
 >
 >     PROC A1()
->    
 >        !!Movimiento Trayectoria A1...
->        
 >     ENDPROC
->
 >
 >     PROC A2()
->    
->        !!Movimiento Trayectoria A2...        
->        
+>        !!Movimiento Trayectoria A2...         
 >     ENDPROC
->
 >
 >     PROC J()
->    
->        !!Movimiento Trayectoria J...         
->        
+>        !!Movimiento Trayectoria J...           
 >     ENDPROC
->
 >
 >     PROC GoGoHome()
->    
->        MoveAbsJ GoHome,v1000,z100,tool_lab1\WObj:=tabla_AJ;
->        
+>        MoveAbsJ GoHome,v1000,z100,tool_lab1\WObj:=tabla_AJ;  
 >     ENDPROC
->
 >
 >     PROC GoMiddle()
->    
 >        MoveAbsJ Middle,v1000,z100,tool_lab1\WObj:=tabla_AJ;
->        
 >     ENDPROC
->
 >
 >     PROC GoMantenimiento()
->    
->        GoMiddle;
->        
->        MoveAbsJ Path_mantenimiento,v200,z100,tool_lab1\WObj:=tabla_AJ;
->        
+>        GoMiddle; 
+>        MoveAbsJ Path_mantenimiento,v200,z100,tool_lab1\WObj:=tabla_AJ;  
 >     ENDPROC
 >
->
 >     TRAP OpMantenimiento
->    
 >        VAR robtarget parada;
->        
 >        SetDO SalDO_1,0;
->        
 >        SetDO SalDO_2,1;
->        
 >        StopMove;
->        
 >        StorePath;
->        
 >        parada:=crobt(\Tool:=tool_lab1\WObj:=tabla_AJ);
->        
 >        GoMantenimiento;
->        
 >        WaitDI EntDI_1,1;
->        
 >        GoMiddle;
->        
 >        MoveL parada,v200,z100,tool_lab1\WObj:=tabla_AJ;
->        
 >        SetDO SalDO_2,0;
->        
 >        SetDO SalDO_1,1;
->        
 >        RestoPath;
->        
 >       StartMove;
->       
 >     ENDTRAP
 >    
 >   ENDMODULE    
