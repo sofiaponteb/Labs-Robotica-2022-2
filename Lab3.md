@@ -102,7 +102,7 @@ En el siguiente gif se puede observar la simulacion del Programa en RobotStudio:
 
 <p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab3/mediaLab3/Video_simulacion_vfinal2.gif"></p>
 
-En el siguiente enlace se puede observar la implementacion de la practica con los robots reales sin realizar la ubicacion del WorkObject:
+En el siguiente enlace se puede observar la implementacion de la practica con los robots del laboratorio sin realizar la ubicacion del WorkObject:
 https://youtu.be/raot1BQLAMo
 
 
