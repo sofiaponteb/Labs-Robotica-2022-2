@@ -102,15 +102,16 @@ En el siguiente gif se puede observar la simulacion del Programa en RobotStudio:
 
 <p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab3/mediaLab3/Video_simulacion_vfinal2.gif"></p>
 
-En el siguiente gif se puede observar la implementacion de la practica con los robots reales sin realizar la ubicacion del WorkObject:
+En el siguiente enlace se puede observar la implementacion de la practica con los robots reales sin realizar la ubicacion del WorkObject:
 https://youtu.be/raot1BQLAMo
 
 
 ## Descripción de la Solución Planteada
 Partiendo de la programacion realizada en la practica 1, lo primero que se realiza es definir las entradas y salidas (E/S) en RobotStudio, posterior a esto se define la secuencia de mantenimiento, teniendo definidas la secuencia de operacion y la secuencia de mantenimiento, procedemos a definir el ciclo de operacion de nuestro programa, el cual incluye comandos dependientes de las Entradas y que modifican el valor de las Salidas, para esta labor nuestro codigo usa los siguientes comandos ```SetDO```,```ISignalDI``` y ``` WaitDI```, en donde cabe resaltar que nuestra secuencia principal sera la de operacion y la secuencia mantenimiento se ejecutara como una interrupcion si se activa la entrada "EntDI_2". Por ultimo se carga el programa en el controlador del laboratorio, se cambia el nombre de las E/S para que correspondan con las del controlador y se ejecuta el programa.
 
-En el siguiente gif se puede observar la implementacion de la practica con los robots reales realizando la ubicacion del WorkObject:
-<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab3/mediaLab3/Video_simulacion_vfinal2.gif"></p>
+En los siguientes enlaces se puede observar la implementacion de la practica con los robots reales realizando la ubicacion del WorkObject:
+https://youtu.be/nLM2jwPQpeQ
+https://youtu.be/LfaXL3PrBfE
 
 
 ## Conclusiones :page_facing_up:
