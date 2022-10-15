@@ -1,0 +1,6 @@
+Symlinking /home/daniel/catkin_ws/devel/lib/pkgconfig/dynamixel_one_motor.pc
+Symlinking /home/daniel/catkin_ws/devel/lib/dynamixel_one_motor/jointSrv.py
+Symlinking /home/daniel/catkin_ws/devel/lib/dynamixel_one_motor/cmake.lock
+Symlinking /home/daniel/catkin_ws/devel/lib/dynamixel_one_motor/jointSub.py
+Symlinking /home/daniel/catkin_ws/devel/share/dynamixel_one_motor/cmake/dynamixel_one_motorConfig.cmake
+Symlinking /home/daniel/catkin_ws/devel/share/dynamixel_one_motor/cmake/dynamixel_one_motorConfig-version.cmake

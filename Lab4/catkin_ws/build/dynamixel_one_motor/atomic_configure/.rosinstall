@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/daniel/catkin_ws/devel/.private/dynamixel_one_motor/setup.sh
