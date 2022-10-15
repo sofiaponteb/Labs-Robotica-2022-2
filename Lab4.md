@@ -138,83 +138,62 @@ Luego de esto, se ejecuta el script de python e inicia el movimiento del robot. 
 ![1](/Lab4/img/succeeded.png)
 
 
-<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/tortugabonita.gif"></p>
+<p align="center"><img width="400" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab4/pincher1.gif"></p>
+
+<p align="center"><img width="400" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab4/pincher2.gif"></p>
 
 ## Script en MATLAB :computer:
-Lo primero que se nos pide es abrir 2 terminales en Ubuntu para esto se da click izquierdo en el simbolo de terminal de la barra de tareas 2 veces, posterior a esto se escribe en la primera terminal el comando de ```roscore``` para iniciar el nodo maestro.  
-![1](/Lab2/mediaLab2/1roscore.png)
-Una vez iniciado el nodo maestro se escribe en la segunda terminal el comando ```rosrun turtlesim turtlesim_node``` el cual se introduce para correr turtlesim
-![2](/Lab2/mediaLab2/2rosrun.png)
-Una vez abierta una instacia de matlab para linux se introduce el codigo propuesto por la guia con el cual se busca realizar un conexion con el nodo maestro, definir un publicador y posteriormente manipular este publicador para poder enviar un comando a TurtleSim. Como se muestra acontinuacion:
+Se desarrolla un corto Script en MATLAB para crear una imagen virtual de las posiciones del robot y así poder contrastarlas con las obtenidas en el robot real.
 
->      
->          %% INICIAL
->    
->          rosinit; %Conexion con nodo maestro
->    
->          %%
->    
->          velPub = rospublisher('/turtle1/cmd_vel','geometry_msgs/Twist'); %Creacion publicador
->    
->          velMsg = rosmessage(velPub); %Creacion de mensaje
->    
->          %%
->    
->          velMsg.Linear.X = 1; %Valor del mensaje
->    
->          send(velPub,velMsg); %Envio
->    
->          pause(1)
->    
->          %% SUBSCRIBER
->    
->          TurtlePose = rossubscriber("/turtle1/pose", "turtlesim/Pose")
->    
->          scanMsg = TurtlePose.LatestMessage
->    
->          %% POSE
->    
->          TurtleTeleport = rossvcclient("/turtle1/teleport_absolute")
->    
->          waitForServer(TurtleTeleport);
->    
->          TurtleMsg = rosmessage(TurtleTeleport)
->    
->          TurtleMsg.X = 5;
->    
->          TurtleMsg.Y = 3;
->    
->          TurtleMsg.Theta = 2*pi/3 ;
->    
->          call(TurtleTeleport,TurtleMsg)
->    
->          %% FINALIZAR NODO MAESTRO
->          rosshutdown
+>      l = [0, 10.2, 10.2, 7.8];
+>      q = [-90, 45, -55, 45]*pi/180;
+>      offset = [0, pi/2, 0, 0];
+>      % Orden parametros funcion link [THETA D A ALPHA SIGMA(0R,1P) OFFSET]
+>      DHparameters = [q(1) 5.4 l(1) pi/2 0 offset(1);
+>                      q(2) 0   l(2) 0    0 offset(2);
+>                      q(3) 0   l(3) 0    0 offset(3);
+>                      q(3) 0   l(4) pi/2 0 offset(4)                ];
+>      L21(1) = Link(DHparameters(1,:));
+>      L21(2) = Link(DHparameters(2,:));
+>      L21(3) = Link(DHparameters(3,:));
+>      L21(4) = Link(DHparameters(4,:));
+>      Robot_punto21 = SerialLink(L21,'name','Punto2.1');
+>      ws2_2 = [-10 10 -10 10 -4.5 40];
+>      Robot_punto21.plot(q,'workspace',ws2_2);
+>      xlim([-12.0 39.5])
+>      ylim([-16.8 34.7])
+>      zlim([-41.0 73.7])
 
+Se cambia el vector ```q``` para hallar la representación de cada una de las 5 posiciones requeridas:
 
-Para recibir un mensaje de turtlesim lo primero que se realiza es la suscripcion al nodo de TurtleSim para poder recibir datos, esto se hace mediante la funcion ```rossubscriber``` cuyos argumentos son los datos que se desean recibir, que en este caso son los provenientes de turtle1 acerca de la posicion ```/turtle1/pose```, y el segundo argumento es el tipo de mensaje que se va a recibir, de forma general tendra la estructura de la posicion proveniente de TurtleSim ```/TurtleSim/pose```. 
-![3](/Lab2/mediaLab2/3turtlePos.png)
+Se realiza la verificación de poses. La ubicación de la cámara de MATLAB se mantuvo constante, mientras que la cámara real se ubicó en las posiciones donde se apreciaba mejor la ubicación de cada articulación.
 
-A continuación se utiliza la función ```TurtleTeleport``` para asignar posiciones arbitrarias a la tortuga por medio de los atributos ```TurtleMsg.X``` y ```TurtleMsg.Y```. Posteriormente se realiza el llamado a la función Teleport enviándole como argumento los atributos asignados en TurtleMsg.
+- 0, 0, 0, 0, 0.
+![1](/Lab4/img/1.png)
 
-![4](/Lab2/mediaLab2/4turtleTeleport.png)
+- -20, 20, -20, 20, 0.
+![2](/Lab4/img/2.png)
 
-Al anterior procedimiento se le agrega el atributo de rotación, para evidenciar cómo sería un cambio de posición no solo con respecto a los ejes sino también de la orientación angular de la tortuga:
+- 30,-30, 30, -30, 0.
+![3](/Lab4/img/3.png)
 
-![5](/Lab2/mediaLab2/5turtleTeleport.png)
+- -90, 15, -55, 17, 0.
+![4](/Lab4/img/4.png)
 
-A continuación se muestra un animación del movimiento de la tortuga al usar la función ``TurtleTeleport``:
+- -90, 45, -55, 45, 10.
+![5](/Lab4/img/5.png)
 
-<p align="center"><img width="700" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab2/mediaLab2/tortugabonita.gif"></p>
 
 ## Conclusiones :page_facing_up:
 
-- Es importante conocer diversas formas de realizar código para robótica, de esta forma se puede facilitar en gran medida la ejecución de diferentes aplicaciones dependiendo de la necesidad que se tenga.
-- El framework ROS permite realizar diversas operaciones de una manera rápida y sencilla, por ello es importante reconocer su funcionamiento y herramientas disponibles.
+- El uso de frameworks como ROS permite facilitar en gran medida el uso de robots pequeños como el Pincher utilizado en este laboratorio.
+- En casos en los cuales no se tenga un buen agarre superficial ni el torque suficiente en las articulaciones, una menor velocidad de trabajo mejora la estabilidad del robot.
 - El trabajo en equipo permite adquirir un mayor aprendizaje en el desarrollo de los ejercicios, ya que se genera discusión acerca de lo que se está realizando y cuál es la mejor manera de hacerlo.
 
 ## Referencias :open_book:
-- Laboratorio 2 - Robotica de desarrollo - Intro a ROS UNAL.
+- Laboratorio 4 - Cinemática Directa - Phantom X - ROS UNAL.
+- https://github.com/fegonzalez7/rob_unal_clase4
+- Apuntes de clase, Robótica 2022-2
 
 
 ## Autores :black_nib:
