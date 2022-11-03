@@ -168,27 +168,6 @@ def on_release(key):
 
 home = [0.1, 20, 15, 0]
 home = invKine(home[0], home[1], home[2], home[3])
-#joint_publisher([home])
-#joint_publisher(tomarHerramientaInv)
-joint_publisher([home])
-joint_publisher(arcoIntInv)
-joint_publisher([home])
-#joint_publisher(arcoExtInv)
-#joint_publisher([home])
-#joint_publisher(namesInv)
-#joint_publisher([home])
-#joint_publisher(trianguloInv)
-#joint_publisher([home])
-#joint_publisher(circuloInv)
-#joint_publisher([home])
-#joint_publisher(lineasInv)
-#joint_publisher([home])
-#joint_publisher(puntosInv)
-#joint_publisher([home])
-#joint_publisher(figuraInv)
-#joint_publisher([home])
-#joint_publisher(dejarHerramientaInv)
-#joint_publisher([home])
 
 #with keyboard.Listener(on_press=on_press, on_release=on_release) as listener:
 #    listener.join()
