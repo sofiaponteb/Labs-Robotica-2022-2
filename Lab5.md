@@ -103,7 +103,7 @@ roslaunch dynamixel_one_motor one_controller.launch
 Luego de esto, se ejecuta el script de python y con las teclas pre definidas se controla la rutina de escritura del robot.
 
 
-<p align="center"><img width="400" src="https://"></p>
+<p align="center"><img width="400" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/circulo.png"></p>
 
 
 
