@@ -111,7 +111,31 @@ Luego de esto, se ejecuta el script de python y con las teclas pre definidas se 
 
 A continuación se presentan los resultados obtenidos en el ejercicio:
 
-<p align="center"><img width="400" src="https://www.fotosdememes.com/wp-content/uploads/2022/04/aqui-colocaria-mi-trofeo-si-tuviera-uno-sin-texto.jpg"></p>
+https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/0%20marcador.mp4
+
+https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/1%20arco.mp4
+
+https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/2%20arco%202.mp4
+
+https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/3%20triangulo.mp4
+
+<p align="center"><img width="400" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/3%20triangulo.jpeg"></p>
+
+https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/4%20circulo.mp4
+
+<p align="center"><img width="400" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/4%20circulo.jpeg"></p>
+
+https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/5%20lineas.mp4
+
+<p align="center"><img width="400" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/5%20lineas.jpeg"></p>
+
+https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/6%20figura.mp4
+
+<p align="center"><img width="400" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/6%20figura.jpeg"></p>
+
+https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/7%20marcador.mp4
+
+<p align="center"><img width="400" src="https://github.com/sofiaponteb/Labs-Robotica-2022-2/blob/main/Lab5/img/6%20figura.jpeg"></p>
 
 ## Conclusiones :page_facing_up:
 
